@@ -11,9 +11,6 @@ export default () => (
       </header>
       <div className="css-creations-list__list">
         <AnimatedRings />
-        <AnimatedRings />
-        <AnimatedRings />
-        <AnimatedRings />
       </div>
     </section>
   </main>

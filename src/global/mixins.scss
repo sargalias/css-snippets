@@ -1,7 +1,7 @@
 
 @mixin frame {
-  width: 25rem;
-  height: 25rem;
+  width: var(--frame-length);
+  height: var(--frame-length);
   box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   position: relative;
