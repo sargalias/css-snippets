@@ -2,7 +2,6 @@
 .footer {
   @include background();
   @include box-border(top);
-  justify-content: space-around;
   padding: var(--section-spacing) 0;
 
   &__container {
@@ -12,7 +11,12 @@
     justify-content: space-around;
   }
 
-  p {
-    margin: 0;
+  &__attribution {
+    margin: 0 1rem 0 0;
+    text-align: center;
+  }
+  &__code {
+    margin: 0 0 0 1rem;
+    text-align: center;
   }
 }

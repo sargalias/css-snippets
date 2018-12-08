@@ -19,7 +19,11 @@
     align-items: center;
     justify-content: space-around;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 20rem);
     grid-gap: 2rem;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 700px) {
+      grid-template-columns: repeat(auto-fill, var(--frame-length));
+    }
   }
 }

@@ -4,8 +4,8 @@ import './footer.scss';
 export default () => (
   <footer className="footer">
     <div className="footer__container">
-      <address className="footer__attribution">
-        <p>
+      <p className="footer__attribution">
+        <address>
           By <cite>
             <a
               href="https://sargalias.com"
@@ -15,18 +15,18 @@ export default () => (
               Spyros Argalias
             </a>
           </cite>
-        </p>
-      </address>
+        </address>
+      </p>
 
-      <div className="footer__code">
-        <p><a
+      <p className="footer__code">
+        <a
           href="https://github.com/sargalias/100-days-css"
           target="_blank"
           rel="noopener noreferrer"
         >
           View code
-        </a></p>
-      </div>
+        </a>
+      </p>
     </div>
   </footer>
 );
