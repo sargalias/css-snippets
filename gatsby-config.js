@@ -9,7 +9,7 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
         components: path.join(__dirname, 'src/components'),
-        creations: path.join(__dirname, 'src/creations'),
+        cssCreations: path.join(__dirname, 'src/cssCreations'),
       },
     },
   ],
