@@ -1,0 +1,25 @@
+
+.css-creations-list {
+  @include container();
+  margin-top: var(--section-spacing);
+  margin-bottom: var(--section-spacing);
+
+  &__header {
+    margin-bottom: var(--section-spacing);
+  }
+
+  &__heading {
+    text-align: center;
+    margin: 0;
+    color: var(--color-primary-text);
+    font-size: 2.6rem;
+  }
+
+  &__list {
+    align-items: center;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20rem);
+    grid-gap: 2rem;
+  }
+}

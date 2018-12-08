@@ -1,0 +1,18 @@
+
+.footer {
+  @include background();
+  @include box-border(top);
+  justify-content: space-around;
+  padding: var(--section-spacing) 0;
+
+  &__container {
+    @include container();
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  p {
+    margin: 0;
+  }
+}

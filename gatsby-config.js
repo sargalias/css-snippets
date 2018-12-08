@@ -12,5 +12,11 @@ module.exports = {
         cssCreations: path.join(__dirname, 'src/cssCreations'),
       },
     },
+    {
+      resolve: 'gatsby-plugin-sass-resources',
+      options: {
+        resources: ['./src/global/mixins.scss', './src/global/mixins.scss'],
+      },
+    },
   ],
 };

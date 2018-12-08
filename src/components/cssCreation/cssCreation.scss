@@ -1,0 +1,12 @@
+
+.css-creation {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  &__heading {
+    letter-spacing: 0.05rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+}

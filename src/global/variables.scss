@@ -1,0 +1,15 @@
+
+:root {
+  --color-primary: #a8e7fc;
+  --color-primary-lighter: #b3edfe;
+  --color-primary-darker: #0ED2F7;
+  --color-complimentary: #DF00BE;
+
+  --color-primary-text: var(--color-primary-darker);
+  --color-primary-text-darker: #0A9EB9;
+  --color-primary-link: #DF00BE;
+  --color-primary-link-hover: #FF8AEC;
+  --color-primary-link-active: #BB00A0;
+
+  --section-spacing: 3rem;
+}

@@ -1,9 +1,4 @@
 import React from "react"
+import App from '../App';
 
-import Header from 'components/header/Header';
-
-export default () => (
-  <div>
-    <Header />
-  </div>
-);
+export default () => <App />;

@@ -1,0 +1,25 @@
+
+@mixin frame {
+  width: 20rem;
+  height: 20rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+}
+
+@mixin container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+@mixin background() {
+  background-image: linear-gradient(var(--color-primary), var(--color-primary-lighter));
+}
+
+@mixin box-border($position) {
+  @if $position == 'top' {
+    box-shadow: 0 -0.3rem 0.3rem var(--color-primary-darker);
+  } @else {
+    box-shadow: 0 0.3rem 0.3rem var(--color-primary-darker);
+  }
+}
