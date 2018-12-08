@@ -18,5 +18,6 @@ module.exports = {
         resources: ['./src/global/mixins.scss', './src/global/mixins.scss'],
       },
     },
+    'gatsby-plugin-react-helmet',
   ],
 };
