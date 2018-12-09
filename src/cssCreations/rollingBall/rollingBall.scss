@@ -1,0 +1,53 @@
+
+.rolling-ball {
+  @include frame();
+  background-image: linear-gradient(to top right, #5614B0, #DBD65C);
+
+  background-color: gray;
+
+  @mixin ring($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - #{$size / 2});
+    left: calc(50% - #{$size / 2});
+  }
+
+  .outer-ring {
+    $size-outer-ring: 50%;
+    $size-factor-ball: 25%;
+    $base-animation-time: 20s;
+
+    $ball-animation-time: $base-animation-time * $size-factor-ball / 100%;
+
+    @include ring($size-outer-ring);
+    background-color: red;
+
+    .anchor-ring {
+      @include ring(100%);
+      animation: simple-rotate $base-animation-time infinite linear;
+
+      .ball {
+        @include ring($size-factor-ball);
+        //left: -20%;
+        left: -$size-factor-ball;
+        background-color: green;
+        border: 2px dashed black;
+        box-sizing: border-box;
+        animation: simple-rotate $ball-animation-time linear infinite;
+      }
+
+    }
+  }
+
+  @keyframes simple-rotate {
+    from {
+      transform: rotateZ(0);
+    }
+
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
