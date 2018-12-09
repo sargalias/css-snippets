@@ -1,0 +1,84 @@
+// TODO These need the correct rotation speeds and physics.
+
+.rolling-ball {
+  @include frame();
+  background-image: linear-gradient(to top right, #5614B0, #DBD65C);
+  background-color: gray;
+
+  @mixin ring($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - #{$size / 2});
+    left: calc(50% - #{$size / 2});
+  }
+
+  .outer-ring {
+    $size-outer-ring: 85%;
+    $size-small-balls: 25%;
+    $border-width: 4px;
+
+    $outer-animation-time: 8s;
+    $inner-animation-time: 4s;
+    $ball-animation-time: 1.5s;
+
+    @include ring($size-outer-ring);
+    box-sizing: border-box;
+    border: $border-width dotted white;
+    animation: rolling-ball-rotate $outer-animation-time infinite linear reverse;
+
+    .anchor-ring {
+      @include ring(100%);
+      animation: rolling-ball-rotate $inner-animation-time infinite linear;
+
+      .center-ring {
+        @include ring(50%);
+        border: $border-width dotted white;
+        box-sizing: border-box;
+        animation: rolling-ball-rotate $inner-animation-time infinite linear;
+      }
+
+      .center-point {
+        @include ring(10%);
+        background-color: silver;
+        box-sizing: border-box;
+      }
+
+      .ball {
+        @include ring($size-small-balls);
+        border: $border-width dotted white;
+        box-sizing: border-box;
+        animation: rolling-ball-rotate $ball-animation-time infinite linear reverse;
+      }
+
+      .ball-1 {
+        top: unset;
+        bottom: 0;
+      }
+
+      .ball-2 {
+        left: 0;
+      }
+
+      .ball-3 {
+        left: unset;
+        right: 0;
+      }
+
+      .ball-4 {
+        top: 0;
+      }
+    }
+  }
+
+  @keyframes rolling-ball-rotate {
+    from {
+      transform: rotateZ(0);
+    }
+
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
