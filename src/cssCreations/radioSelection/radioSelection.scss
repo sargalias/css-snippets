@@ -5,6 +5,7 @@
   $self: &;
   --color-primary: #1abc9c;
   --color-secondary: #ffffff;
+  $color-primary: #1abc9c;
 
   align-items: center;
   background-color: var(--color-primary);
@@ -29,6 +30,11 @@
     transition: 0.5s;
     width: 12%;
     z-index: 1;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
 
     &::before {
       content: '';
