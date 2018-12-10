@@ -13,7 +13,7 @@ const createRadioInputs = (numInputs = 4) => {
           value={i}
           id={i}
           className="radio-selection__input"
-          checked={i === 1}
+          defaultChecked={i === 1}
         />
         <label
           htmlFor={i}
