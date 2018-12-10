@@ -3,6 +3,7 @@ import './cssCreationsList.scss';
 
 import AnimatedRings from 'cssCreations/animatedRings/AnimatedRings';
 import RollingBall from 'cssCreations/rollingBall/RollingBall';
+import RadioSelection from 'cssCreations/radioSelection/RadioSelection';
 
 export default () => (
   <main>
@@ -13,6 +14,7 @@ export default () => (
       <div className="css-creations-list__list">
         <AnimatedRings />
         <RollingBall />
+        <RadioSelection />
       </div>
     </section>
   </main>

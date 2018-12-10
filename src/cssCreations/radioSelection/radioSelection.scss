@@ -1,0 +1,80 @@
+
+.radio-selection {
+  @include frame();
+
+  $self: &;
+  --color-primary: #1abc9c;
+  --color-secondary: #ffffff;
+
+  align-items: center;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+
+  &__form-group {
+    display: contents;
+  }
+
+  &__label {
+    align-items: center;
+    border: 1px solid var(--color-secondary);
+    border-radius: 50%;
+    color: var(--color-secondary);
+    display: flex;
+    height: 12%;
+    justify-content: center;
+    margin: 4%;
+    position: relative;
+    text-align: center;
+    transition: 0.5s;
+    width: 12%;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      background-color: var(--color-secondary);
+      border-radius: 50%;
+      height: 100%;
+      position: absolute;
+      transform: scale(0);
+      transition: inherit;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked + #{&}__label {
+    animation: jump 1s;
+    color: green;
+    &::before {
+      background-color: var(--color-secondary);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+
+    25% {
+      bottom: 4%;
+    }
+
+    50% {
+      bottom: 0;
+    }
+
+    75% {
+      bottom: 2%;
+    }
+
+    100% {
+      bottom: 0;
+    }
+  }
+}
