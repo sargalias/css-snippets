@@ -12,9 +12,9 @@ export default () => (
         <h2 className="css-creations-list__heading">CSS Creations</h2>
       </header>
       <div className="css-creations-list__list">
-        <AnimatedRings />
-        <RollingBall />
         <RadioSelection />
+        <RollingBall />
+        <AnimatedRings />
       </div>
     </section>
   </main>
