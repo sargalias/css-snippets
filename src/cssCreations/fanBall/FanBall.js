@@ -5,7 +5,7 @@ import './fanBall.scss';
 const createCircles = (numCircles=4) => {
   const circles = [];
   for (let i=1; i<=numCircles; i++) {
-    circles.push(<div className={`circle circle-${i}`} />);
+    circles.push(<div className={`circle circle-${i}`} key={i} />);
   }
   return circles;
 };
