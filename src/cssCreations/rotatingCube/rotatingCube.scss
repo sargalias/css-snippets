@@ -1,0 +1,179 @@
+
+.rotating-cube {
+  @include frame();
+
+  --cube-size: 50%;
+  --side-padding: 5%;
+  --ball-relative-width: 20%;
+
+  --cube-animation-time: 5s;
+  --side-animation-time: 2s;
+  --side-animation-delay: 2s;
+  --ball-animation-time: 4s;
+  --white: #ffffff;
+
+  background: linear-gradient(to left, #0083B0, #00B4DB);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    transform-style: preserve-3d;
+    animation: rotating-cube-cube var(--cube-animation-time) infinite linear;
+    transform-origin: center;
+  }
+
+  .side {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed var(--white);
+    display: flex;
+    align-items: center;
+    padding: var(--side-padding);
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(50% - var(--size) / 2);
+    left: calc(50% - var(--size) / 2);
+    background-color: rgba(255, 255, 255, 0.1);
+
+    &::before {
+      content: '';
+      display: block;
+      position: relative;
+      width: var(--ball-relative-width);
+      height: var(--ball-relative-width);
+      border-radius: 50%;
+      background: var(--white);
+      animation: rotating-cube-ball var(--ball-animation-time) infinite linear;
+    }
+  }
+
+  @for $i from 2 to 6 {
+    .side-#{$i} {
+      animation:
+              rotating-cube-side-#{$i}
+              var(--side-animation-time)
+              forwards
+              calc(var(--side-animation-delay) * (#{$i} - 2))
+      ;
+    }
+  }
+
+
+  // KEYFRAMES
+
+  //Keyframe cube
+  @keyframes rotating-cube-cube {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+
+    50% {
+      transform: rotateX(30deg) rotateY(30deg) rotateZ(180deg);
+    }
+
+    100% {
+      transform: rotateX(0) rotateY(0) rotateZ(360deg);
+    }
+  }
+
+  //Keyframes sides
+ @keyframes rotating-cube-side-2 {
+    from {
+      transform: translateX(0) rotateY(0) translateX(0);
+    }
+
+    to {
+      transform: translateX(50%) rotateY(90deg) translateX(50%);
+    }
+  }
+
+  @keyframes rotating-cube-side-3 {
+    from {
+      transform: translateX(0) rotateY(0) translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%) rotateY(-90deg) translateX(-50%);
+    }
+  }
+
+  @keyframes rotating-cube-side-4 {
+    from {
+      transform: translateY(0) rotateX(0) translateY(0);
+    }
+
+    to {
+      transform: translateY(-50%) rotateX(90deg) translateY(-50%);
+    }
+  }
+
+  @keyframes rotating-cube-side-5 {
+    from {
+      transform: translateY(0) rotateX(0) translateY(0);
+    }
+
+    to {
+      transform: translateY(50%) rotateX(-90deg) translateY(50%);
+    }
+  }
+
+  @keyframes rotating-cube-side-6 {
+    from {
+      transform: rotateY(0) translateX(0) rotateY(0);
+    }
+
+    to {
+      transform: rotateY(90deg) translateX(100%) rotateY(90deg);
+    }
+  }
+
+  //Keyframe ball
+  @keyframes rotating-cube-ball {
+    0% {
+      left: 0;
+      box-shadow:
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+
+    25% {
+      left: calc(50% - var(--side-padding) * 2 - var(--ball-relative-width) / 2);
+      box-shadow:
+              -4px 0 0 0 rgba(255, 255, 255, 0.3),
+              -8px 0 0 0 rgba(255, 255, 255, 0.3),
+              -12px 0 0 0 rgba(255, 255, 255, 0.3),
+              -16px 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+      left: calc(100% - var(--side-padding) * 2 - var(--ball-relative-width) / 2);
+      box-shadow:
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+
+    75% {
+      left: calc(50% - var(--side-padding) * 2 - var(--ball-relative-width) / 2);
+      box-shadow:
+              4px 0 0 0 rgba(255, 255, 255, 0.3),
+              8px 0 0 0 rgba(255, 255, 255, 0.3),
+              12px 0 0 0 rgba(255, 255, 255, 0.3),
+              16px 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+
+    100% {
+      left: 0;
+      box-shadow:
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3),
+              0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+  }
+}
