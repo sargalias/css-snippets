@@ -13,12 +13,12 @@
 
   --section-spacing: 3rem;
 
-  --breakpoint-sm: 500px;
-  --breakpoint-md: 700px;
+  $breakpoint-sm: 500px;
+  $breakpoint-md: 700px;
 
   --frame-length: 15rem;
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: $breakpoint-sm) {
     --frame-length: 25rem;
   }
 }
