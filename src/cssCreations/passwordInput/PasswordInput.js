@@ -9,7 +9,7 @@ export default () => (
         className="field overlapping-field input"
         type="text"
         placeholder={`Enter the word "password"`}
-        pattern="password"
+        pattern="password|Password"
         required
       />
       <div className="field overlapping-field key-heading">Secret Key</div>
