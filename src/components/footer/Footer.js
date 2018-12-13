@@ -4,19 +4,17 @@ import './footer.scss';
 export default () => (
   <footer className="footer">
     <div className="footer__container">
-      <p className="footer__attribution">
-        <address>
-          By <cite>
-            <a
-              href="https://sargalias.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Spyros Argalias
-            </a>
-          </cite>
-        </address>
-      </p>
+      <address className="footer__attribution">
+        By <cite>
+          <a
+            href="https://sargalias.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Spyros Argalias
+          </a>
+        </cite>
+      </address>
 
       <p className="footer__code">
         <a
