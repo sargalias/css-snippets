@@ -6,6 +6,7 @@ import RollingBall from 'cssCreations/rollingBall/RollingBall';
 import RadioSelection from 'cssCreations/radioSelection/RadioSelection';
 import FanBall from 'cssCreations/fanBall/FanBall';
 import PasswordInput from 'cssCreations/passwordInput/PasswordInput';
+import SideToSide from 'cssCreations/sideToSide/SideToSide';
 
 export default () => (
   <main>
@@ -14,6 +15,7 @@ export default () => (
         <h2 className="css-creations-list__heading">CSS Creations</h2>
       </header>
       <div className="css-creations-list__list">
+        <SideToSide />
         <PasswordInput />
         <FanBall />
         <RadioSelection />
