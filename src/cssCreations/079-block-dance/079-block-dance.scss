@@ -1,5 +1,41 @@
 
 .block-dance {
   @include frame();
+
+  --color-primary: #ffec2e;
+  --size-block: 10%;
+  --animation-time: 10s;
+
+  background: linear-gradient(to top right, #2f3535, #0e172c);
+
+  .block {
+    width: var(--size-block);
+    height: var(--size-block);
+    background-color: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+
+    position: absolute;
+    top: calc(50% - var(--size-block) / 2);
+    left: calc(50% - var(--size-block) / 2);
+  }
+
+  @for $i from 1 through 10 {
+    .block-#{$i} {
+      animation: block-dance-#{$i} var(--animation-time) infinite linear;
+    }
+  }
+  .block-1 {
+    transform: translateX(500%);
+  }
+
+  @keyframes block-dance-1 {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(100px);
+    }
+  }
 }
 
