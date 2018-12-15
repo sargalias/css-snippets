@@ -4,7 +4,9 @@
 
   --color-primary: #ffec2e;
   --size-block: 10%;
+  $box-size-factor: 10;
   --animation-time: 10s;
+
 
   background: linear-gradient(to top right, #2f3535, #0e172c);
 
@@ -12,29 +14,166 @@
     width: var(--size-block);
     height: var(--size-block);
     background-color: var(--color-primary);
-    box-shadow: 0 0 10px var(--color-primary);
+    //box-shadow: 0 0 10px var(--color-primary);
 
     position: absolute;
     top: calc(50% - var(--size-block) / 2);
     left: calc(50% - var(--size-block) / 2);
+    border-radius: 0;
   }
 
+  // Calculations
+  $base-percentage: 23%;
+  // ---
   @for $i from 1 through 10 {
+    $base-rotate: ($i - 1) * 36;
     .block-#{$i} {
-      animation: block-dance-#{$i} var(--animation-time) infinite linear;
-    }
-  }
-  .block-1 {
-    transform: translateX(500%);
-  }
-
-  @keyframes block-dance-1 {
-    0% {
-      transform: translateX(0);
+      animation: block-dance-#{$i} var(--animation-time) infinite;
     }
 
-    100% {
-      transform: translateX(100px);
+    @keyframes block-dance-#{$i} {
+      0% {
+        transform: scale(0);
+      }
+
+      5% {
+        transform: scale(1);
+      }
+
+      15% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                scale(1);
+      }
+
+      20% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage)
+                scale(0.25, 1);
+      }
+
+      25% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage)
+                scale(0.25)
+                rotate(179deg);
+      }
+
+      30% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage)
+                rotate(179deg)
+                scale(1, 0.25)
+      }
+
+      35% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * ($base-percentage * 2 / 3))
+                scale(1, 0.1);
+      }
+
+      40% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * ($base-percentage * 2 / 3))
+                scale(1, 0.1)
+                translateX($box-size-factor * $base-percentage / 3);
+      }
+
+      45% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * ($base-percentage * 2 / 3))
+                scale(1, 0.1)
+                translateX(-$box-size-factor * $base-percentage / 3);
+      }
+
+      50% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * ($base-percentage * 2 / 3))
+                scale(1, 0.1);
+      }
+
+      55% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * ($base-percentage * 2 / 3))
+                scale(0.5, 0.1);
+        border-radius: 0;
+      }
+
+      60% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * 25%)
+                scale(0.5, 0.5)
+                rotate(179deg);
+        border-radius: 50%;
+      }
+
+      65% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                scale(0.2, 0.2);
+        border-radius: 50%;
+      }
+
+      70% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage)
+                scale(0.25, 1);
+        border-radius: 0;
+      }
+
+      75% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage)
+                scale(0.25, 0.25);
+      }
+
+      80% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage / 2)
+                scale(0.5, 0.5);
+      }
+
+      85% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage / 2)
+                scale(0.5, 0.5)
+                rotate(179deg)
+                translate($box-size-factor * $base-percentage / 2, -$box-size-factor * $base-percentage / 2);
+      }
+
+      90% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage / 3)
+                scale(0.5, 0.1);
+      }
+
+      95% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * $base-percentage / 6)
+                scale(0.1, 0.5);
+      }
+
+      100% {
+        transform:
+                rotate(#{$base-rotate}deg)
+                translateY($box-size-factor * 100%)
+                scale(0.1, 0.5);
+      }
     }
   }
 }

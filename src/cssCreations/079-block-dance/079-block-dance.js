@@ -12,7 +12,7 @@ const createBlocks = (numBlocks=10) => {
 export default () => (
   <CssCreation heading="079 - Block dance">
     <div className="block-dance">
-      { createBlocks(1) }
+      { createBlocks() }
     </div>
   </CssCreation>
 );
