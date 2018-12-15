@@ -50,7 +50,7 @@
     }
   }
 
-  @for $i from 2 to 6 {
+  @for $i from 2 through 6 {
     .side-#{$i} {
       animation:
               rotating-cube-side-#{$i}
