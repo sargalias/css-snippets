@@ -13,6 +13,7 @@
     flex: 1;
     transition: flex var(--transition-time);
     overflow: hidden;
+    cursor: pointer;
 
     &:nth-child(2n) {
       background-color: var(--background-color-1);
