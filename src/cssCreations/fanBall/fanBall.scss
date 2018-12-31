@@ -89,11 +89,11 @@
     }
 
     75% {
-      transform: rotateX(130deg) rotateY(200deg) rotateZ(70deg);
+      transform: rotateX(130deg) rotateY(100deg) rotateZ(70deg);
     }
 
     100% {
-      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      transform: rotateX(0) rotateY(0) rotateZ(0);
     }
   }
 }
