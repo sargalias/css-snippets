@@ -6,6 +6,8 @@
   --background-color-1: #FEB1E0;
   --background-color-2: #9BE5FF;
 
+  background-color: var(--background-color-1);
+
   display: flex;
 
   .stripe {
