@@ -1,6 +1,6 @@
 import React from 'react';
 import CssCreation from 'components/cssCreation/CssCreation';
-import './radioSelection.scss';
+import './074-radio-selection.scss';
 
 const createRadioInputs = (numInputs = 4) => {
   const inputs = [];
@@ -27,7 +27,7 @@ const createRadioInputs = (numInputs = 4) => {
 };
 
 export default () => (
-  <CssCreation heading="Radio selection">
+  <CssCreation heading="074 - Radio selection">
     <div className="radio-selection">
       { createRadioInputs() }
     </div>

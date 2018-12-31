@@ -1,9 +1,9 @@
 import React from 'react';
 import './cssCreationsList.scss';
 
-import AnimatedRings from 'cssCreations/animatedRings/AnimatedRings';
+import AnimatedRings from 'cssCreations/072-animated-rings/072-animated-rings';
 import RollingBall from 'cssCreations/rollingBall/RollingBall';
-import RadioSelection from 'cssCreations/radioSelection/RadioSelection';
+import RadioSelection from 'cssCreations/074-radio-selection/074-radio-selection';
 import FanBall from 'cssCreations/fanBall/FanBall';
 import PasswordInput from 'cssCreations/passwordInput/PasswordInput';
 import RotatingCube from 'cssCreations/rotatingCube/RotatingCube';
