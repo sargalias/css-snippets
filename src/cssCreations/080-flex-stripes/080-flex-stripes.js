@@ -3,7 +3,7 @@ import CssCreation from 'components/cssCreation/CssCreation';
 import './080-flex-stripes.scss';
 
 export default () => (
-  <CssCreation heading="080 Flex stripes">
+  <CssCreation heading="080 - Flex stripes">
     <div className="flex-stripes">
       <div className="stripe">
         <span className="text">
