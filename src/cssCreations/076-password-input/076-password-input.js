@@ -1,9 +1,9 @@
 import React from 'react';
 import CssCreation from 'components/cssCreation/CssCreation';
-import './passwordInput.scss';
+import './076-password-input.scss';
 
 export default () => (
-  <CssCreation heading="Password input">
+  <CssCreation heading="076 - Password input">
     <div className="password-input">
       <input
         className="field overlapping-field input"
