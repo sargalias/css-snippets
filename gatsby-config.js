@@ -19,20 +19,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Open Sans',
-            variants: ['400'],
-          },
-          {
-            family: 'Crimson Text',
-            variants: ['400'],
-          },
-        ],
-      },
-    },
   ],
 };
