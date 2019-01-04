@@ -1,0 +1,115 @@
+
+.person {
+  @include frame();
+
+  --person-color: #ffffff;
+
+  background-image: linear-gradient(to bottom right, #904e95, #e96443);
+  background-color: #904e95;
+
+  .head {
+    background-color: var(--person-color);
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .body {
+    background-color: var(--person-color);
+    width: 12%;
+    height: 25%;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .arms {
+    width: 100%;
+    height: 80%;
+    background-color: inherit;
+  }
+
+  .arm-upper {
+    background-color: inherit;
+    width: 30%;
+    height: 50%;
+    position: absolute;
+    transform-origin: 50% 10%;
+  }
+
+  .arm-upper-left {
+    border-radius: 1rem 1rem 0 0;
+    left: 0;
+    transform: translateX(-40%) rotate(15deg);
+  }
+
+  .arm-upper-right {
+    border-radius: 1rem 1rem 1rem 1rem;
+    top: 2%;
+    right: 0;
+    transform: translateX(50%) rotate(-70deg);
+    animation: person-arm-upper 2s infinite alternate;
+  }
+
+  .arm-lower {
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    position: absolute;
+    top: 90%;
+    transform-origin: 50% 10%;
+    border-radius: 1rem;
+  }
+
+  .arm-lower-left {
+    transform: rotate(-10deg);
+  }
+
+  .arm-lower-right {
+    transform: translate(-5%, -12%) rotate(-90deg);
+    animation: person-arm-lower 2s infinite alternate;
+  }
+
+  @keyframes person-arm-upper {
+    from {
+      transform: translateX(50%) rotate(-70deg);
+    }
+
+    to {
+      transform: translateX(50%) rotate(-80deg);
+    }
+  }
+
+  @keyframes person-arm-lower {
+    from {
+      transform: translate(-5%, -12%) rotate(-70deg);
+    }
+
+    to {
+      transform: translate(-5%, -12%) rotate(-110deg);
+    }
+  }
+
+  .legs {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .leg {
+    width: 46%;
+    height: 100%;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+}
