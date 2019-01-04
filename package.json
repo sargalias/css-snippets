@@ -3,7 +3,7 @@
   "description": "100 Days CSS challenge",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --open",
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve"

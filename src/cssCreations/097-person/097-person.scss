@@ -3,27 +3,35 @@
   @include frame();
 
   --person-color: #ffffff;
+  --base-body-size: 50%;
+  --person-height: 63%;
+
+  // Calculations
+  $head-ratio: 10 / 63;
+  $body-ratio: 50 / 63;
 
   background-image: linear-gradient(to bottom right, #904e95, #e96443);
   background-color: #904e95;
 
   .head {
+    --head-size: calc(var(--person-height) * #{$head-ratio});
     background-color: var(--person-color);
-    width: 10%;
-    height: 10%;
+    width: var(--head-size);
+    height: var(--head-size);
     border-radius: 50%;
     position: absolute;
-    bottom: 65%;
+    top: calc((100% - var(--person-height)) / 2);
     left: 50%;
     transform: translateX(-50%);
   }
 
   .body {
+    --body-size: calc(var(--person-height) * #{$body-ratio});
     background-color: var(--person-color);
-    width: 12%;
-    height: 25%;
+    width: calc(var(--body-size) / 4);
+    height: calc(var(--body-size) / 2);
     position: absolute;
-    top: 38%;
+    bottom: calc((100% - var(--person-height)) / 2 + var(--body-size) / 2);
     left: 50%;
     transform: translateX(-50%);
     border-radius: 1rem 1rem 0 0;
@@ -52,7 +60,7 @@
   .arm-upper-right {
     border-radius: 1rem 1rem 1rem 1rem;
     top: 2%;
-    right: 0;
+    right: 3%;
     transform: translateX(50%) rotate(-70deg);
     animation: person-arm-upper 2s infinite alternate;
   }
@@ -111,5 +119,4 @@
     background-color: white;
     border-radius: 0 0 1rem 1rem;
   }
-
 }
