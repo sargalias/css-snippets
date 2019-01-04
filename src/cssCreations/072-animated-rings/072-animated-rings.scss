@@ -12,10 +12,11 @@
 
 .animated-rings {
   @include frame();
+  $radius: 25%;
+
   background: linear-gradient(to top right, #33001b, #ff0084);
 
   .ring {
-    $radius: 25%;
     @include center($radius);
     @include size($radius);
 
