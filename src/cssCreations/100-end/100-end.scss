@@ -1,0 +1,201 @@
+
+.end {
+  @include frame();
+
+  --color-background: #272C34;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --width: 80%;
+  --height: 33%;
+  --animation-duration: 6s;
+  $iterations-per-side: 6;
+
+  // Calculations
+  $line-thickness-ratio: 0.73;
+  --animation-delay-unit: calc(1s / 6);
+
+  @mixin end-line($length, $direction: 'vertical') {
+    @if $direction == 'vertical' {
+      width: 10%;
+      height: $length;
+    } @else {
+      width: $length;
+      height: 10% * $line-thickness-ratio;
+    }
+  }
+
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .center {
+    width: var(--width);
+    height: var(--height);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .letter {
+    width: 25%;
+    height: 100%;
+    position: relative;
+  }
+
+  .line {
+    border-radius: 1rem;
+    background-color: var(--color-light);
+    box-shadow: 0 0 1rem var(--color-light);
+    animation: end-letters var(--animation-duration) infinite alternate both;
+    position: absolute;
+    width: 10%;
+  }
+
+  .e {
+    // left vertical
+    .e1 {
+      @include end-line(100%, 'vertical');
+    }
+
+    // top horizontal
+    .e2 {
+      @include end-line(80%, 'horizontal');
+      left: 20%;
+      animation-delay: calc(var(--animation-delay-unit) * 6);
+    }
+
+    // middle horizontal
+    .e3 {
+      @include end-line(70%, 'horizontal');
+      top: 50%;
+      left: 20%;
+      transform: translateY(-50%);
+      animation-delay: calc(var(--animation-delay-unit) * 9);
+    }
+
+    // bottom horizontal
+    .e4 {
+      @include end-line(80%, 'horizontal');
+      left: 20%;
+      bottom: 0;
+      animation-delay: calc(var(--animation-delay-unit) * 6);
+    }
+  }
+
+  .n {
+    // left vertical
+    .n1 {
+      @include end-line(100%, 'vertical');
+      animation-delay: calc(var(--animation-delay-unit) * 9);
+    }
+
+    // right vertical
+    .n2 {
+      @include end-line(100%, 'vertical');
+      right: 0;
+      animation-delay: calc(var(--animation-delay-unit) * 9);
+    }
+
+    // top horizontal
+    .n3 {
+      @include end-line(15%, 'horizontal');
+      left: 20%;
+      animation-delay: calc(var(--animation-delay-unit) * 12);
+    }
+
+    // middle top vertical
+    .n4 {
+      @include end-line(15%, 'horizontal');
+      right: 20%;
+      bottom: 0;
+      animation-delay: calc(var(--animation-delay-unit) * 12);
+    }
+
+    // middle bottom vertical
+    .n5 {
+      @include end-line(30%, 'vertical');
+      left: 45%;
+      animation-delay: calc(var(--animation-delay-unit) * 12);
+    }
+
+    // bottom horizontal
+    .n6 {
+      @include end-line(30%, 'vertical');
+      right: 45%;
+      bottom: 0;
+      animation-delay: calc(var(--animation-delay-unit) * 12);
+    }
+  }
+
+  .d {
+    // left vertical
+    .d1 {
+      @include end-line(100%, 'vertical');
+      animation-delay: calc(var(--animation-delay-unit) * 15);
+    }
+
+    // top horizontal
+    .d2 {
+      @include end-line(30%, 'horizontal');
+      left: 20%;
+      animation-delay: calc(var(--animation-delay-unit) * 18);
+    }
+
+    // top slanted
+    .d3 {
+      @include end-line(30%, 'horizontal');
+      left: 60%;
+      transform: rotate(45deg);
+      transform-origin: 0 50%;
+      animation-delay: calc(var(--animation-delay-unit) * 18);
+    }
+
+    // bottom horizontal
+    .d4 {
+      @include end-line(30%, 'horizontal');
+      left: 20%;
+      bottom: 0;
+      animation-delay: calc(var(--animation-delay-unit) * 18);
+    }
+
+    // bottom slanted
+    .d5 {
+      @include end-line(30%, 'horizontal');
+      left: 60%;
+      bottom: 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 50%;
+      animation-delay: calc(var(--animation-delay-unit) * 18);
+    }
+
+    // right vertical
+    .d6 {
+      @include end-line(30%, 'vertical');
+      right: 0;
+      bottom: 35%;
+      animation-delay: calc(var(--animation-delay-unit) * 15);
+    }
+  }
+
+  @keyframes end-letters {
+    $interval: 1%;
+    @for $i from 0 to $iterations-per-side {
+      $i: $i * 2;
+
+      #{50% + $interval * $i} {
+        background-color: var(--color-light);
+        box-shadow: 0 0 1rem var(--color-light);
+      }
+
+      #{50% + $interval * ($i + 1)} {
+        background-color: var(--color-dark);
+        box-shadow: 0 0 1rem var(--color-background);
+      }
+    }
+
+    100% {
+      background-color: var(--color-dark);
+      box-shadow: 0 0 1rem var(--color-background);
+    }
+  }
+}

@@ -11,6 +11,7 @@ import BlockDance from 'cssCreations/079-block-dance/079-block-dance';
 import FlexStripes from 'cssCreations/080-flex-stripes/080-flex-stripes';
 import PigDrawing from 'cssCreations/095-pig-drawing/095-pig-drawing';
 import Person from 'cssCreations/097-person/097-person';
+import End from 'cssCreations/100-end/100-end';
 
 export default () => (
   <main>
@@ -19,6 +20,7 @@ export default () => (
         <h2 className="css-creations-list__heading">CSS Creations</h2>
       </header>
       <div className="css-creations-list__list">
+        <End />
         <Person />
         <PigDrawing />
         <FlexStripes />
