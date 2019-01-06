@@ -22,11 +22,9 @@ export default () => (
         </div>
         <div className="letter d">
           <div className="line d1" />
-          <div className="line d2" />
-          <div className="line d3" />
-          <div className="line d4" />
-          <div className="line d5" />
-          <div className="line d6" />
+          <div className="semicircle-container d2-outer">
+            <div className="d2-inner" />
+          </div>
         </div>
       </div>
     </div>

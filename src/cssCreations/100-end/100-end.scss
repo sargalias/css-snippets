@@ -13,6 +13,10 @@
   // Calculations
   $line-thickness-ratio: 0.73;
   --animation-delay-unit: calc(1s / 6);
+  $box-shadow-semicircle-light: 0 0 1rem rgba(255, 255, 255, 0.5);
+  $box-shadow-semicircle-dark: 0 0 1rem #272C34;
+  $box-shadow-semicircle-inset-light: inset 0 0 1rem rgba(255, 255, 255, 0.5);
+  $box-shadow-semicircle-inset-dark: inset 0 0 1rem #272C34;
 
   @mixin end-line($length, $direction: 'vertical') {
     @if $direction == 'vertical' {
@@ -134,46 +138,51 @@
       animation-delay: calc(var(--animation-delay-unit) * 15);
     }
 
-    // top horizontal
-    .d2 {
-      @include end-line(30%, 'horizontal');
-      left: 20%;
-      animation-delay: calc(var(--animation-delay-unit) * 18);
+    .flex-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    // top slanted
-    .d3 {
-      @include end-line(30%, 'horizontal');
-      left: 60%;
-      transform: rotate(45deg);
-      transform-origin: 0 50%;
-      animation-delay: calc(var(--animation-delay-unit) * 18);
+    .semicircle-container {
+      width: 80%;
+      height: 120%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
-    // bottom horizontal
-    .d4 {
-      @include end-line(30%, 'horizontal');
-      left: 20%;
-      bottom: 0;
-      animation-delay: calc(var(--animation-delay-unit) * 18);
-    }
-
-    // bottom slanted
-    .d5 {
-      @include end-line(30%, 'horizontal');
-      left: 60%;
-      bottom: 0;
-      transform: rotate(-45deg);
-      transform-origin: 0 50%;
-      animation-delay: calc(var(--animation-delay-unit) * 18);
-    }
-
-    // right vertical
-    .d6 {
-      @include end-line(30%, 'vertical');
+    .d2-outer {
       right: 0;
-      bottom: 35%;
-      animation-delay: calc(var(--animation-delay-unit) * 15);
+      overflow: hidden;
+    }
+
+    .d2-inner {
+      background-color: var(--color-light);
+      width: 160%;
+      height: calc(100% / 120 * 100);
+      position: absolute;
+      top: 50%;
+      right: 20%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $box-shadow-semicircle-light;
+      animation: end-semicircle var(--animation-duration) infinite alternate both;
+      animation-delay: calc(var(--animation-delay-unit) * 18);
+
+      &::before {
+        content: '';
+        width: 85%;
+        height: calc(100% - 10% * #{$line-thickness-ratio} * 2 + 1%);
+        background-color: var(--color-background) !important;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0.4rem rgba(255, 255, 255, 0.5);
+        animation: end-box-shadow var(--animation-duration) infinite alternate both;
+        animation-delay: calc(var(--animation-delay-unit) * 18);
+      }
     }
   }
 
@@ -196,6 +205,47 @@
     100% {
       background-color: var(--color-dark);
       box-shadow: 0 0 1rem var(--color-background);
+    }
+  }
+
+  @keyframes end-box-shadow {
+    $interval: 1%;
+    @for $i from 0 to $iterations-per-side {
+      $i: $i * 2;
+
+      #{50% + $interval * $i} {
+        box-shadow: $box-shadow-semicircle-inset-light;
+      }
+
+      #{50% + $interval * ($i + 1)} {
+        box-shadow: $box-shadow-semicircle-inset-dark;
+      }
+    }
+
+    100% {
+      box-shadow: $box-shadow-semicircle-inset-dark;
+    }
+  }
+
+  @keyframes end-semicircle {
+    $interval: 1%;
+    @for $i from 0 to $iterations-per-side {
+      $i: $i * 2;
+
+      #{50% + $interval * $i} {
+        background-color: var(--color-light);
+        box-shadow: $box-shadow-semicircle-light;
+      }
+
+      #{50% + $interval * ($i + 1)} {
+        background-color: var(--color-dark);
+        box-shadow: $box-shadow-semicircle-dark;
+      }
+    }
+
+    100% {
+      background-color: var(--color-dark);
+      box-shadow: $box-shadow-semicircle-dark;
     }
   }
 }
