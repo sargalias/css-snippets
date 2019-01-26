@@ -1,17 +1,47 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
+import loadable from '@loadable/component';
 import './cssCreationsList.scss';
 
-import AnimatedRings from 'cssCreations/072-animated-rings/072-animated-rings';
-import RollingBall from 'cssCreations/rollingBall/RollingBall';
-import RadioSelection from 'cssCreations/074-radio-selection/074-radio-selection';
-import FanBall from 'cssCreations/fanBall/FanBall';
-import PasswordInput from 'cssCreations/076-password-input/076-password-input';
-import RotatingCube from 'cssCreations/rotatingCube/RotatingCube';
-import BlockDance from 'cssCreations/079-block-dance/079-block-dance';
-import FlexStripes from 'cssCreations/080-flex-stripes/080-flex-stripes';
-import PigDrawing from 'cssCreations/095-pig-drawing/095-pig-drawing';
-import Person from 'cssCreations/097-person/097-person';
 import End from 'cssCreations/100-end/100-end';
+import Person from 'cssCreations/097-person/097-person';
+import PigDrawing from 'cssCreations/095-pig-drawing/095-pig-drawing';
+import FlexStripes from 'cssCreations/080-flex-stripes/080-flex-stripes';
+
+const BlockDance = loadable(() => import('cssCreations/079-block-dance/079-block-dance'));
+const RotatingCube = loadable(() => import('cssCreations/rotatingCube/RotatingCube'));
+const PasswordInput = loadable(() => import('cssCreations/076-password-input/076-password-input'));
+const FanBall = loadable(() => import('cssCreations/fanBall/FanBall'));
+const RadioSelection = loadable(() => import('cssCreations/074-radio-selection/074-radio-selection'));
+const RollingBall = loadable(() => import('cssCreations/rollingBall/RollingBall'));
+const AnimatedRings = loadable(() => import('cssCreations/072-animated-rings/072-animated-rings'));
+
+const cssCreationComponents = [
+  End,
+  Person,
+  PigDrawing,
+  FlexStripes,
+  BlockDance,
+  RotatingCube,
+  PasswordInput,
+  FanBall,
+  RadioSelection,
+  RollingBall,
+  AnimatedRings
+];
+
+
+const displayCssCreations = () => {
+  return cssCreationComponents.map((Component, i) => (
+    i < 4 ? (
+      <Component key={i} />
+    ) : (
+      <LazyLoad height={400} offset={200} key={i}>
+        <Component />
+      </LazyLoad>
+    )
+  ));
+};
 
 export default () => (
   <main>
@@ -20,17 +50,7 @@ export default () => (
         <h2 className="css-creations-list__heading">CSS Creations</h2>
       </header>
       <div className="css-creations-list__list">
-        <End />
-        <Person />
-        <PigDrawing />
-        <FlexStripes />
-        <BlockDance />
-        <RotatingCube />
-        <PasswordInput />
-        <FanBall />
-        <RadioSelection />
-        <RollingBall />
-        <AnimatedRings />
+        { displayCssCreations() }
       </div>
     </section>
   </main>
