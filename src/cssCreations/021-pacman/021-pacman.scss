@@ -1,0 +1,133 @@
+
+.pacman {
+  @include frame();
+
+  // Variables
+  $color-gradient-1: #0575E6;
+  $color-gradient-2: #00F260;
+  $color-background: mix($color-gradient-1, $color-gradient-2);
+  --color-pacman: #eedf00;
+  --animation-time: 0.7s;
+  --pacman-size: 25%;
+
+  // Calculations
+  --orb-size: calc(var(--pacman-size) / 9);
+  --orb-margin: calc((50% - 4 * var(--orb-size)) / 4 / 2);
+  --animation-pacman: var(--animation-time) infinite alternate ease-in-out;
+  --animation-orbs: var(--animation-time) infinite linear;
+
+  background-image: linear-gradient(to top right, $color-gradient-1, $color-gradient-2);
+  background-color: $color-background;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pacman-pacman {
+    width: var(--pacman-size);
+    height: var(--pacman-size);
+    position: relative;
+  }
+
+  .semicircle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-pacman);
+    border-radius: 50%;
+    clip-path: polygon(0 50%, 100% 50%, 100% 0, 0 0);
+    animation: var(--animation-pacman);
+  }
+
+  .semicircle-top {
+    animation-name: pacman-semicircle-top;
+  }
+
+  .semicircle-bottom {
+    animation-name: pacman-semicircle-bottom;
+    transform: rotate(180deg);
+  }
+
+  .eye {
+    border-radius: 50%;
+    background-color: $color-background;
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    animation: var(--animation-pacman);
+    animation-name: pacman-eye-animation;
+  }
+
+  .orbs {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    animation: var(--animation-orbs);
+    animation-name: pacman-orbs-animation;
+    --left: calc(var(--orb-size) + var(--orb-margin) * 2);
+    left: var(--left);
+    clip-path: polygon(var(--left) 0, var(--left) 100%, 100% 100%, 100% 0);
+  }
+
+  .orb {
+    width: var(--orb-size);
+    height: var(--orb-size);
+    border-radius: 50%;
+    background-color: var(--color-pacman);
+    flex: 0 0 auto;
+    margin: var(--orb-margin);
+  }
+
+  $pacman-semicircle-animation-waypoints: (
+          0%: 0,
+          5%: 0,
+          50%: -40deg,
+          100%: 0,
+  );
+
+  $pacman-eye-animation-waypoints: (
+          0%: (0, 0),
+          5%: (0, 0),
+          50%: (-60%, -40%),
+          100%: (0, 0),
+  );
+
+  @each $dir in top bottom {
+    @keyframes pacman-semicircle-#{$dir} {
+      @each $percentage, $angle in $pacman-semicircle-animation-waypoints {
+        @if $dir == bottom {
+          $angle: 180deg - $angle;
+        }
+
+        #{$percentage} {
+          transform: rotate($angle);
+        }
+      }
+    }
+  }
+
+  @keyframes pacman-eye-animation {
+    @each $percentage, $angles in $pacman-eye-animation-waypoints {
+      #{$percentage} {
+        transform: translate($angles);
+      }
+    }
+  }
+
+  @keyframes pacman-orbs-animation {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(
+              (var(--orb-size) + var(--orb-margin) * 2) * -1
+      ));
+    }
+  }
+}

@@ -3,31 +3,34 @@ import LazyLoad from 'react-lazyload';
 import loadable from '@loadable/component';
 import './cssCreationsList.scss';
 
+import Pacman from 'cssCreations/021-pacman/021-pacman';
 import End from 'cssCreations/100-end/100-end';
 import Person from 'cssCreations/097-person/097-person';
 import PigDrawing from 'cssCreations/095-pig-drawing/095-pig-drawing';
 import FlexStripes from 'cssCreations/080-flex-stripes/080-flex-stripes';
-
 const BlockDance = loadable(() => import('cssCreations/079-block-dance/079-block-dance'));
-const RotatingCube = loadable(() => import('cssCreations/rotatingCube/RotatingCube'));
 const PasswordInput = loadable(() => import('cssCreations/076-password-input/076-password-input'));
-const FanBall = loadable(() => import('cssCreations/fanBall/FanBall'));
 const RadioSelection = loadable(() => import('cssCreations/074-radio-selection/074-radio-selection'));
-const RollingBall = loadable(() => import('cssCreations/rollingBall/RollingBall'));
 const AnimatedRings = loadable(() => import('cssCreations/072-animated-rings/072-animated-rings'));
 
+const RotatingCube = loadable(() => import('cssCreations/rotatingCube/RotatingCube'));
+const FanBall = loadable(() => import('cssCreations/fanBall/FanBall'));
+const RollingBall = loadable(() => import('cssCreations/rollingBall/RollingBall'));
+
 const cssCreationComponents = [
+  Pacman,
   End,
   Person,
   PigDrawing,
   FlexStripes,
   BlockDance,
-  RotatingCube,
   PasswordInput,
-  FanBall,
   RadioSelection,
+  AnimatedRings,
+
+  RotatingCube,
+  FanBall,
   RollingBall,
-  AnimatedRings
 ];
 
 
