@@ -1,8 +1,6 @@
 import React from "react"
 import { Helmet } from 'react-helmet';
 
-import 'typeface-crimson-text';
-import 'typeface-open-sans';
 import './global/global.scss';
 import './global/variables.scss';
 import Header from 'components/header/Header';
