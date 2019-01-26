@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass-resources',
       options: {
-        resources: ['./src/global/mixins.scss', './src/global/mixins.scss'],
+        resources: ['./src/global/mixins.scss'],
       },
     },
     'gatsby-plugin-react-helmet',
