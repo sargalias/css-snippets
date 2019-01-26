@@ -3,7 +3,6 @@ import LazyLoad from 'react-lazyload';
 import loadable from '@loadable/component';
 import './cssCreationsList.scss';
 
-import Pacman from 'cssCreations/021-pacman/021-pacman';
 import End from 'cssCreations/100-end/100-end';
 import Person from 'cssCreations/097-person/097-person';
 import PigDrawing from 'cssCreations/095-pig-drawing/095-pig-drawing';
@@ -13,12 +12,12 @@ const PasswordInput = loadable(() => import('cssCreations/076-password-input/076
 const RadioSelection = loadable(() => import('cssCreations/074-radio-selection/074-radio-selection'));
 const AnimatedRings = loadable(() => import('cssCreations/072-animated-rings/072-animated-rings'));
 
+const Pacman = loadable(() => import('cssCreations/021-pacman/021-pacman'));
 const RotatingCube = loadable(() => import('cssCreations/rotatingCube/RotatingCube'));
 const FanBall = loadable(() => import('cssCreations/fanBall/FanBall'));
 const RollingBall = loadable(() => import('cssCreations/rollingBall/RollingBall'));
 
 const cssCreationComponents = [
-  Pacman,
   End,
   Person,
   PigDrawing,
@@ -27,7 +26,7 @@ const cssCreationComponents = [
   PasswordInput,
   RadioSelection,
   AnimatedRings,
-
+  Pacman,
   RotatingCube,
   FanBall,
   RollingBall,
