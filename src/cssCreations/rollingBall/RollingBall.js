@@ -1,9 +1,9 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './rollingBall.scss';
 
 export default () => (
-  <CssCreation heading="Rolling Ball">
+  <CssCreationWrapper heading="Rolling Ball">
     <div className="rolling-ball">
       <div className="outer-ring">
         <div className="anchor-ring">
@@ -16,5 +16,5 @@ export default () => (
         </div>
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

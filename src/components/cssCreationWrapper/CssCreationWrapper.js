@@ -1,5 +1,5 @@
 import React from 'react';
-import './cssCreation.scss';
+import './cssCreationWrapper.scss';
 
 export default ({ heading, children }) => (
   <article className="css-creation">

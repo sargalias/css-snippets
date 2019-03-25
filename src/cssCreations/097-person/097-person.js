@@ -1,9 +1,9 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './097-person.scss';
 
 export default () => (
-  <CssCreation heading="097 - Person" >
+  <CssCreationWrapper heading="097 - Person" >
     <div className="person">
       <div className="container">
         <div className="head" />
@@ -23,5 +23,5 @@ export default () => (
         </div>
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

@@ -1,9 +1,9 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './100-end.scss';
 
 export default () => (
-  <CssCreation heading="100 - End" >
+  <CssCreationWrapper heading="100 - End" >
     <div className="end">
       <div className="center">
         <div className="letter e">
@@ -28,5 +28,5 @@ export default () => (
         </div>
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

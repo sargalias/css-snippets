@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet';
 
 import './global/global.scss';
 import './global/variables.scss';
-import Header from 'components/header/Header';
-import Footer from 'components/footer/Footer';
-import CssCreationsList from 'components/cssCreationsList/CssCreationsList';
+import Header from 'components/header';
+import Footer from 'components/footer';
+import CssCreationsList from 'components/cssCreationsList';
 
 export default () => (
   <div>

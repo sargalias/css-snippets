@@ -1,9 +1,9 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './080-flex-stripes.scss';
 
 export default () => (
-  <CssCreation heading="080 - Flex stripes">
+  <CssCreationWrapper heading="080 - Flex stripes">
     <div className="flex-stripes">
       <div className="stripe">
         <span className="text">
@@ -26,5 +26,5 @@ export default () => (
         </span>
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

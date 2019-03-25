@@ -1,9 +1,9 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './095-pig-drawing.scss';
 
 export default () => (
-  <CssCreation heading="095 - Pig drawing" >
+  <CssCreationWrapper heading="095 - Pig drawing" >
     <div className="pig-drawing">
       <div className="center">
         <div className="face">
@@ -22,5 +22,5 @@ export default () => (
         </div>
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

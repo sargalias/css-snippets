@@ -1,5 +1,5 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './fanBall.scss';
 
 const createCircles = (numCircles=4) => {
@@ -11,11 +11,11 @@ const createCircles = (numCircles=4) => {
 };
 
 export default () => (
-  <CssCreation heading="Fan ball">
+  <CssCreationWrapper heading="Fan ball">
     <div className="fan-ball">
       <div className="circle-container">
         { createCircles(6) }
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 )

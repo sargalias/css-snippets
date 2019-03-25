@@ -1,5 +1,5 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 
 import './rotatingCube.scss';
 
@@ -12,11 +12,11 @@ const createSides = () => {
 };
 
 export default () => (
-  <CssCreation heading="Rotating cube">
+  <CssCreationWrapper heading="Rotating cube">
     <div className="rotating-cube">
       <div className="cube">
         { createSides() }
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

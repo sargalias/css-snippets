@@ -1,5 +1,5 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './079-block-dance.scss';
 
 const createBlocks = (numBlocks=10) => {
@@ -10,9 +10,9 @@ const createBlocks = (numBlocks=10) => {
 };
 
 export default () => (
-  <CssCreation heading="079 - Block dance">
+  <CssCreationWrapper heading="079 - Block dance">
     <div className="block-dance">
       { createBlocks() }
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

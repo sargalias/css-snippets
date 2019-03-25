@@ -1,5 +1,5 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './072-animated-rings.scss';
 
 const numRings = 10;
@@ -12,9 +12,9 @@ const createRings = () => {
 };
 
 export default () => (
-  <CssCreation heading="072 - Animated Rings">
+  <CssCreationWrapper heading="072 - Animated Rings">
     <div className="animated-rings">
       { createRings() }
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );

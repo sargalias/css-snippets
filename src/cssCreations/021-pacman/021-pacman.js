@@ -1,9 +1,9 @@
 import React from 'react';
-import CssCreation from 'components/cssCreation/CssCreation';
+import CssCreationWrapper from 'components/cssCreationWrapper';
 import './021-pacman.scss';
 
 export default () => (
-  <CssCreation heading="021 - Pacman">
+  <CssCreationWrapper heading="021 - Pacman">
     <div className="pacman">
       <div className="pacman-pacman">
         <div className="semicircle semicircle-top" />
@@ -17,5 +17,5 @@ export default () => (
         <div className="orb" />
       </div>
     </div>
-  </CssCreation>
+  </CssCreationWrapper>
 );
