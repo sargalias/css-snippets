@@ -11,8 +11,9 @@ const BlockDance = loadable(() => import('cssCreations/079-block-dance/079-block
 const PasswordInput = loadable(() => import('cssCreations/076-password-input/076-password-input'));
 const RadioSelection = loadable(() => import('cssCreations/074-radio-selection/074-radio-selection'));
 const AnimatedRings = loadable(() => import('cssCreations/072-animated-rings/072-animated-rings'));
+const Pacman = loadable(() => import('cssCreations/021-pacman'));
+const Title = loadable(() => import('cssCreations/001-title'));
 
-const Pacman = loadable(() => import('cssCreations/021-pacman/021-pacman'));
 const RotatingCube = loadable(() => import('cssCreations/rotatingCube/RotatingCube'));
 const FanBall = loadable(() => import('cssCreations/fanBall/FanBall'));
 const RollingBall = loadable(() => import('cssCreations/rollingBall/RollingBall'));
@@ -27,6 +28,7 @@ const cssCreationComponents = [
   RadioSelection,
   AnimatedRings,
   Pacman,
+  Title,
   RotatingCube,
   FanBall,
   RollingBall,
