@@ -18,6 +18,10 @@
 
   --frame-length: 15rem;
 
+  --font-family-body: Segoe UI, Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --font-family-headings: Georgia, Times, 'Times New Roman', serif;
+
   @media screen and (min-width: $breakpoint-sm) {
     --frame-length: 25rem;
   }

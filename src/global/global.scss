@@ -1,6 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
 body {
-  font-family: Segoe UI, Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-family-body);
 }
 
 html, body {
@@ -11,8 +18,7 @@ html, body {
 h1,
 h2,
 h3 {
-  font-family: Georgia, Times, 'Times New Roman', serif;
-;
+  font-family: var(--font-family-headings);
 }
 
 h1 {
