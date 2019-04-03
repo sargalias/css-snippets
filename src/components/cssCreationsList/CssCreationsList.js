@@ -19,6 +19,9 @@ const RadioSelection = loadable(() =>
 const AnimatedRings = loadable(() =>
   import('cssCreations/072-animated-rings/072-animated-rings')
 );
+const AnimatedTypography = loadable(() =>
+  import('cssCreations/023-animated-typography')
+);
 const Pacman = loadable(() => import('cssCreations/021-pacman'));
 const Weather = loadable(() => import('cssCreations/009-weather'));
 const Title = loadable(() => import('cssCreations/001-title'));
@@ -40,6 +43,7 @@ const cssCreationComponents = [
   PasswordInput,
   RadioSelection,
   AnimatedRings,
+  AnimatedTypography,
   Pacman,
   Weather,
   Title,
