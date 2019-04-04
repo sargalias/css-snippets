@@ -6,7 +6,10 @@ import './cssCreationsList.scss';
 import End from 'cssCreations/100-end/100-end';
 import Person from 'cssCreations/097-person/097-person';
 import PigDrawing from 'cssCreations/095-pig-drawing/095-pig-drawing';
-import FlexStripes from 'cssCreations/080-flex-stripes/080-flex-stripes';
+import CubeLoader from 'cssCreations/091-cube-loader';
+const FlexStripes = loadable(() =>
+  import('cssCreations/080-flex-stripes/080-flex-stripes')
+);
 const BlockDance = loadable(() =>
   import('cssCreations/079-block-dance/079-block-dance')
 );
@@ -38,6 +41,7 @@ const cssCreationComponents = [
   End,
   Person,
   PigDrawing,
+  CubeLoader,
   FlexStripes,
   BlockDance,
   PasswordInput,
