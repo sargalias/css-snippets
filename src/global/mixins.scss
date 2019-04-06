@@ -21,6 +21,10 @@
   );
 }
 
+@mixin gradient($color1, $color2, $dir: to top right) {
+  background-image: linear-gradient($dir, $color1, $color2);
+}
+
 @mixin box-border($position) {
   @if $position == 'top' {
     box-shadow: 0 -0.3rem 0.3rem var(--color-primary-darker);

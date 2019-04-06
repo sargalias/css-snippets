@@ -1,0 +1,270 @@
+.animated-typography {
+  @include frame();
+
+  --color-bg-2: #3494e6;
+  --color-bg-1: #ec6ead;
+  --base-animation-time: 1s;
+  --text-color: #fff;
+
+  background-color: var(--color-bg-1);
+  background-image: linear-gradient(
+    to top right,
+    var(--color-bg-1),
+    var(--color-bg-2)
+  );
+
+  .circle {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: animated-typography-circle var(--base-animation-time) forwards;
+  }
+
+  .line {
+    width: 35%;
+    height: 1%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0);
+    background-color: var(--text-color);
+    animation: {
+      duration: var(--base-animation-time);
+      delay: calc(var(--base-animation-time) * 0.9);
+      fill-mode: forwards;
+    }
+  }
+
+  .line-left {
+    right: 50%;
+    transform-origin: 100% 50%;
+    animation-name: animated-typography-line-left;
+  }
+
+  .line-right {
+    left: 50%;
+    transform-origin: 0% 50%;
+    animation-name: animated-typography-line-right;
+  }
+
+  $bracket-height: 15%;
+  .bracket {
+    width: 1%;
+    height: $bracket-height;
+    position: absolute;
+    top: 50%;
+    transform-origin: 50% 50%;
+    background-color: var(--text-color);
+    animation: {
+      duration: calc(var(--base-animation-time) / 2);
+      delay: calc(var(--base-animation-time) * 1.7);
+      fill-mode: forwards;
+      timing-function: ease-in;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 500%;
+      height: 100% / $bracket-height * 1%;
+      background-color: var(--text-color);
+      animation: {
+        name: animated-typography-bracket-child;
+        duration: calc(var(--base-animation-time) / 2);
+        delay: calc(var(--base-animation-time) * 2.2);
+        fill-mode: forwards;
+        timing-function: ease-out;
+      }
+      transform: scaleX(0);
+      position: absolute;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  .bracket-left {
+    left: 15%;
+    transform: translate(-50%, -50%) scaleY(0);
+    animation-name: animated-typography-bracket-left;
+
+    &::before,
+    &::after {
+      transform-origin: 0 50%;
+    }
+  }
+
+  .bracket-right {
+    right: 15%;
+    transform: translate(50%, -50%) scaleY(0);
+    animation-name: animated-typography-bracket-right;
+
+    &::before,
+    &::after {
+      right: 0;
+      transform-origin: 100% 50%;
+    }
+  }
+
+  .text {
+    color: var(--text-color);
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+
+  .text-small {
+    font-size: 1rem;
+    animation: {
+      duration: calc(var(--base-animation-time) / 2);
+      delay: calc(var(--base-animation-time) * 2.2);
+      fill-mode: forwards;
+      timing-function: ease-out;
+    }
+
+    @include breakpoint-sm() {
+      font-size: 1.8rem;
+    }
+  }
+
+  .text-big {
+    top: 50%;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: -0.1rem;
+    transform: translate(-50%, -50%) scaleY(0);
+    animation: {
+      name: animated-typography-text-big;
+      duration: calc(var(--base-animation-time) / 2);
+      delay: calc(var(--base-animation-time) * 1.7);
+      fill-mode: forwards;
+      timing-function: ease-in;
+    }
+
+    @include breakpoint-sm() {
+      font-size: 3rem;
+      margin-top: -0.2rem;
+    }
+  }
+
+  .text-top {
+    top: 38%;
+    animation-name: animated-typography-text-top;
+    opacity: 0;
+    transform: translate(-100%, -50%);
+  }
+
+  .text-bottom {
+    bottom: 38%;
+    animation-name: animated-typography-text-bottom;
+    opacity: 0;
+    transform: translate(-50%, 50%);
+  }
+}
+
+@keyframes animated-typography-circle {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@each $dir in left, right {
+  @keyframes animated-typography-line-#{$dir} {
+    $initial-origin: if($dir == left, 100% 50%, 0% 50%);
+    $final-origin: if($dir == left, 0% 50%, 100% 50%);
+
+    0% {
+      transform: translateY(-50%) scaleX(0);
+      transform-origin: $initial-origin;
+    }
+
+    50% {
+      transform: translateY(-50%) scaleX(1);
+      transform-origin: $initial-origin;
+    }
+
+    51% {
+      transform: translateY(-50%) scaleX(1);
+      transform-origin: $final-origin;
+    }
+
+    100% {
+      transform: translateY(-50%) scaleX(0);
+      transform-origin: $final-origin;
+    }
+  }
+
+  @keyframes animated-typography-bracket-#{$dir} {
+    $translate-value: if($dir == left, (-50%, -50%), (50%, -50%));
+    0% {
+      transform: translate($translate-value) scaleY(0);
+    }
+
+    100% {
+      transform: translate($translate-value) scaleY(1);
+    }
+  }
+}
+
+@keyframes animated-typography-bracket-child {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes animated-typography-text-big {
+  from {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+}
+
+@keyframes animated-typography-text-top {
+  from {
+    transform: translate(-100%, -50%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes animated-typography-text-bottom {
+  from {
+    transform: translate(0%, 50%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+  }
+}

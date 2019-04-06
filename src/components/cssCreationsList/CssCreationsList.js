@@ -22,6 +22,9 @@ const RadioSelection = loadable(() =>
 const AnimatedRings = loadable(() =>
   import('cssCreations/072-animated-rings/072-animated-rings')
 );
+const GradientTransition = loadable(() =>
+  import('cssCreations/061-gradient-transition')
+);
 const AnimatedTypography = loadable(() =>
   import('cssCreations/023-animated-typography')
 );
@@ -46,6 +49,7 @@ const cssCreationComponents = [
   BlockDance,
   PasswordInput,
   RadioSelection,
+  GradientTransition,
   AnimatedRings,
   AnimatedTypography,
   Pacman,
