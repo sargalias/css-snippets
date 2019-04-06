@@ -46,6 +46,12 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin center-absolute-calc() {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
 @function sqrt($r) {
   $x0: 1;
   $x1: $x0;
