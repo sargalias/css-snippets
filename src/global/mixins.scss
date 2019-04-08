@@ -67,8 +67,8 @@
 $breakpoint-sm: 500px;
 $breakpoint-md: 700px;
 
-@mixin breakpoint-sm() {
-  @media screen and (min-width: $breakpoint-sm) {
+@mixin media-up($br) {
+  @media screen and (min-width: $br) {
     @content;
   }
 }

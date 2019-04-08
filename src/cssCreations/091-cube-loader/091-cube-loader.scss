@@ -12,7 +12,7 @@
 
   background-color: #34495e;
 
-  @include breakpoint-sm() {
+  @include media-up($breakpoint-sm) {
     --cube-size: 8rem;
   }
 
