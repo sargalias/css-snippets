@@ -25,6 +25,7 @@ const AnimatedRings = loadable(() =>
 const GradientTransition = loadable(() =>
   import('cssCreations/061-gradient-transition')
 );
+const ThreeDSphere = loadable(() => import('cssCreations/058-3d-sphere'));
 const Thermostat = loadable(() => import('cssCreations/055-thermostat'));
 const AnimatedTypography = loadable(() =>
   import('cssCreations/023-animated-typography')
@@ -50,6 +51,7 @@ const cssCreationComponents = [
   BlockDance,
   PasswordInput,
   RadioSelection,
+  ThreeDSphere,
   GradientTransition,
   Thermostat,
   AnimatedRings,
