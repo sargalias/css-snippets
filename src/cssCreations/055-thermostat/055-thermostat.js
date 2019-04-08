@@ -2,7 +2,7 @@ import React from 'react';
 import CssCreationWrapper from 'components/cssCreationWrapper';
 import './055-thermostat.scss';
 
-const GradientTransition = () => (
+const Thermostat = () => (
   <CssCreationWrapper heading="055 - Thermostat">
     <div className="thermostat">
       <div className="center">
@@ -24,4 +24,4 @@ const GradientTransition = () => (
   </CssCreationWrapper>
 );
 
-export default GradientTransition;
+export default Thermostat;
