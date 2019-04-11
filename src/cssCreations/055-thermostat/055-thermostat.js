@@ -11,10 +11,10 @@ const Thermostat = () => (
           <div className="temperature-pointer" />
           <div className="temperature-reading">
             <span className="temperature-value first">
-              19<span class="degree-symbol">&deg;</span>
+              19<span className="degree-symbol">&deg;</span>
             </span>
             <span className="temperature-value second">
-              21<span class="degree-symbol">&deg;</span>
+              21<span className="degree-symbol">&deg;</span>
             </span>
           </div>
           <div className="room">Bedroom</div>
