@@ -1,0 +1,71 @@
+.hypnotic-ring {
+  @include frame();
+
+  --color-border: #ffffff;
+  --color-background: #9d00a7;
+  $animation-duration-circle: 15s;
+  $animation-duration-container: 60s;
+  $num-circles: 50;
+
+  background-color: var(--color-background);
+
+  .ring-container {
+    width: 100%;
+    height: 100%;
+    animation: {
+      name: hypnotic-ring-container;
+      duration: $animation-duration-container;
+      iteration-count: infinite;
+      direction: both;
+    }
+    position: relative;
+  }
+
+  .circle {
+    width: 200px;
+    height: 200px;
+    border: 2px dotted var(--color-border);
+    border-radius: 50%;
+    position: absolute;
+    animation: {
+      name: hypnotic-ring-circle;
+      duration: $animation-duration-circle;
+      iteration-count: infinite;
+      direction: both;
+    }
+    top: 100px;
+    opacity: 0;
+  }
+
+  $animation-interval: $animation-duration-circle / $num-circles;
+
+  @for $i from 1 through $num-circles {
+    .circle-#{$i} {
+      animation: {
+        delay: -$animation-interval * $i;
+      }
+    }
+  }
+}
+
+@keyframes hypnotic-ring-container {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hypnotic-ring-circle {
+  from {
+    transform: scale(0) translate(200px, -200px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scale(4);
+    opacity: 1;
+  }
+}

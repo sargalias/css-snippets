@@ -22,6 +22,7 @@ const RadioSelection = loadable(() =>
 const AnimatedRings = loadable(() =>
   import('cssCreations/072-animated-rings/072-animated-rings')
 );
+const HypnoticRing = loadable(() => import('cssCreations/063-hypnotic-ring'));
 const GradientTransition = loadable(() =>
   import('cssCreations/061-gradient-transition')
 );
@@ -57,6 +58,7 @@ const cssCreationComponents = [
   Thermostat,
   RangeSlider,
   AnimatedRings,
+  HypnoticRing,
   AnimatedTypography,
   Pacman,
   Weather,
