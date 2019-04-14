@@ -27,6 +27,7 @@ const GradientTransition = loadable(() =>
 );
 const ThreeDSphere = loadable(() => import('cssCreations/058-3d-sphere'));
 const Thermostat = loadable(() => import('cssCreations/055-thermostat'));
+const RangeSlider = loadable(() => import('cssCreations/053-range-slider'));
 const AnimatedTypography = loadable(() =>
   import('cssCreations/023-animated-typography')
 );
@@ -54,6 +55,7 @@ const cssCreationComponents = [
   ThreeDSphere,
   GradientTransition,
   Thermostat,
+  RangeSlider,
   AnimatedRings,
   AnimatedTypography,
   Pacman,
