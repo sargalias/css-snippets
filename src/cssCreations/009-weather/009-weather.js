@@ -1,19 +1,12 @@
 import React from 'react';
 import CssCreationWrapper from 'components/cssCreationWrapper';
+import { createDivsWithNumberedClasses } from 'utilities/utility';
 import './009-weather.scss';
 
 const createCraterDivs = (num = 10) =>
   createDivsWithNumberedClasses('crater', num);
 
 const createDropDivs = (num = 20) => createDivsWithNumberedClasses('drop', num);
-
-const createDivsWithNumberedClasses = (baseClass, num = 10) => {
-  let divs = [];
-  for (let i = 1; i <= num; i++) {
-    divs.push(<div className={`${baseClass} ${baseClass}-${i}`} key={i} />);
-  }
-  return divs;
-};
 
 export default () => (
   <CssCreationWrapper heading="009 - Weather">
