@@ -1,0 +1,126 @@
+.padlock {
+  @include frame();
+
+  $num-sections: 8;
+  $num-lines-per-section: 5;
+  $color-padlock: #bacbcc;
+  --color-control: #030303;
+  --color-background: #40bfd3;
+  --transition-time-padlock: 2s;
+
+  $box-shadow-main: inset 0.3rem 0.3rem 0.3rem lighten($color-padlock, 30),
+    inset -0.3rem -0.3rem 0.3rem darken($color-padlock, 20),
+    0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+  $box-shadow-shackle-background: -0.2rem -0.2rem 0.2rem darken($color-padlock, 30),
+    inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3),
+    0.3rem -0.3rem 0.3rem lighten($color-padlock, 20);
+
+  background: var(--color-background);
+
+  .shackle {
+    width: 30%;
+    height: 30%;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-padlock;
+    box-shadow: $box-shadow-main;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 80%;
+      height: 80%;
+      background-color: var(--color-background);
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: inherit;
+      box-shadow: $box-shadow-shackle-background;
+    }
+  }
+
+  .body {
+    @include center-flex();
+    width: 40%;
+    height: 40%;
+    background-color: $color-padlock;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: $box-shadow-main;
+    cursor: pointer;
+  }
+
+  .lock {
+    @include center-flex();
+    width: 92%;
+    height: 92%;
+    background-color: var(--color-control);
+    border-radius: 50%;
+    position: relative;
+    transition: transform var(--transition-time-padlock);
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  .knob {
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    background-color: $color-padlock;
+    box-shadow: inset 0 0 0.3rem lighten($color-padlock, 30);
+  }
+
+  .line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 1.5%;
+    height: 8%;
+    transform-origin: 50% 50%;
+  }
+
+  .number {
+    position: absolute;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 700;
+    transform-origin: 50% 50%;
+
+    @include media-up($breakpoint-sm) {
+      font-size: 0.8rem;
+    }
+  }
+
+  $num-lines: $num-lines-per-section * $num-sections;
+  $degree-interval-lines: 360deg / $num-lines;
+
+  @for $line-number from 1 through $num-lines {
+    .line-#{$line-number} {
+      @if ($line-number - 1) % $num-lines-per-section == 0 {
+        background-color: #ffffff;
+        height: 13%;
+        transform: rotate($degree-interval-lines * ($line-number - 1))
+          translateY(-305%);
+      } @else {
+        transform: rotate($degree-interval-lines * ($line-number - 1))
+          translateY(-520%);
+      }
+    }
+  }
+
+  $degree-interval-sections: 360deg / $num-sections;
+  @for $section-num from 1 through $num-sections {
+    .number-#{$section-num} {
+      transform: rotate($degree-interval-sections * ($section-num - 1))
+        translateY(-200%);
+    }
+  }
+}

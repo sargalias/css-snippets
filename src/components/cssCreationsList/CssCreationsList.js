@@ -6,7 +6,8 @@ import './cssCreationsList.scss';
 import End from 'cssCreations/100-end/100-end';
 import Person from 'cssCreations/097-person/097-person';
 import PigDrawing from 'cssCreations/095-pig-drawing/095-pig-drawing';
-import CubeLoader from 'cssCreations/091-cube-loader';
+import Padlock from 'cssCreations/093-padlock';
+const CubeLoader = loadable(() => import('cssCreations/091-cube-loader'));
 const FlexStripes = loadable(() =>
   import('cssCreations/080-flex-stripes/080-flex-stripes')
 );
@@ -48,6 +49,7 @@ const cssCreationComponents = [
   End,
   Person,
   PigDrawing,
+  Padlock,
   CubeLoader,
   FlexStripes,
   BlockDance,
