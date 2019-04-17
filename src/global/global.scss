@@ -2,15 +2,19 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
+  animation-play-state: var(--animation-play-state);
 }
 
 body {
   font-family: var(--font-family-body);
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
@@ -29,7 +33,8 @@ h2 {
   font-size: 2.3rem;
 }
 
-address, p {
+address,
+p {
   font-size: 1.4rem;
 }
 
@@ -43,7 +48,7 @@ a {
   color: var(--color-primary-link);
   &:hover,
   &:focus {
-    color: var(--color-primary-link-hover)
+    color: var(--color-primary-link-hover);
   }
   &:active {
     color: var(--color-primary-link-active);

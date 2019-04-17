@@ -1,15 +1,15 @@
-
 :root {
+  --animation-play-state: paused;
   --color-primary: #a8e7fc;
   --color-primary-lighter: #b3edfe;
-  --color-primary-darker: #0ED2F7;
-  --color-complimentary: #DF00BE;
+  --color-primary-darker: #0ed2f7;
+  --color-complimentary: #df00be;
 
   --color-primary-text: var(--color-primary-darker);
-  --color-primary-text-darker: #0A9EB9;
-  --color-primary-link: #DF00BE;
-  --color-primary-link-hover: #FF8AEC;
-  --color-primary-link-active: #BB00A0;
+  --color-primary-text-darker: #0a9eb9;
+  --color-primary-link: #df00be;
+  --color-primary-link-hover: #ff8aec;
+  --color-primary-link-active: #bb00a0;
 
   --section-spacing: 3rem;
 
@@ -18,7 +18,8 @@
 
   --frame-length: 15rem;
 
-  --font-family-body: Segoe UI, Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-body: Segoe UI, Frutiger, 'Frutiger Linotype', 'Dejavu Sans',
+    'Helvetica Neue', Arial, sans-serif;
 
   --font-family-headings: Georgia, Times, 'Times New Roman', serif;
 
