@@ -1,4 +1,3 @@
-
 .radio-selection {
   @include frame();
 
@@ -54,7 +53,10 @@
   }
 
   &__input:checked + #{&}__label {
-    animation: jump 1s;
+    animation: {
+      name: jump;
+      duration: 1s;
+    }
     color: green;
     &::before {
       background-color: var(--color-secondary);

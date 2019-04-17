@@ -1,4 +1,3 @@
-
 .person {
   @include frame();
 
@@ -62,7 +61,12 @@
     top: 2%;
     right: 3%;
     transform: translateX(50%) rotate(-70deg);
-    animation: person-arm-upper 2s infinite alternate;
+    animation: {
+      name: person-arm-upper;
+      duration: 2s;
+      iteration-count: infinite;
+      direction: alternate;
+    }
   }
 
   .arm-lower {
@@ -81,7 +85,8 @@
 
   .arm-lower-right {
     transform: translate(-5%, -12%) rotate(-90deg);
-    animation: person-arm-lower 2s infinite alternate;
+    animation: inherit;
+    animation-name: person-arm-lower;
   }
 
   @keyframes person-arm-upper {

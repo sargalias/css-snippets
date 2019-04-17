@@ -59,8 +59,13 @@
       transform-origin: 50% 100%;
       position: absolute;
       bottom: 0;
-      animation: cube-loader-fill-sides var(--animation-time) infinite alternate
-        both;
+      animation: {
+        name: cube-loader-fill-sides;
+        duration: var(--animation-time);
+        iteration-count: infinite;
+        direction: alternate;
+        fill-mode: both;
+      }
       background-color: var(--cube-fill-color);
     }
   }

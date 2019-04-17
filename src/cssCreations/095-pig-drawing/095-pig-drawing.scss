@@ -1,4 +1,3 @@
-
 .pig-drawing {
   @include frame();
 
@@ -6,6 +5,7 @@
   --color-1: #ec8c92;
   --color-2: #f7b0b5;
   --color-3: #bf5e65;
+  --animation-blink-interval: 4s;
 
   --face-width: 50%;
 
@@ -28,7 +28,8 @@
     background: var(--color-1);
   }
 
-  .ears, .eyes {
+  .ears,
+  .eyes {
     display: contents;
   }
 
@@ -100,7 +101,12 @@
     height: 15%;
     position: absolute;
     top: calc(45% - 7.5%);
-    animation: pig-drawing-eyes alternate 4s infinite;
+    animation: {
+      name: pig-drawing-eyes;
+      direction: alternate;
+      duration: var(--animation-blink-interval);
+      iteration-count: infinite;
+    }
 
     &::before {
       content: '';
@@ -125,10 +131,6 @@
   }
 
   @keyframes pig-drawing-eyes {
-    0% {
-
-    }
-
     95% {
       transform: scale(1);
     }

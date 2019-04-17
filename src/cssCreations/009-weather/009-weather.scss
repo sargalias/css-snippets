@@ -25,7 +25,12 @@
     border-radius: 50%;
     transform: translate(0%, 500%);
     box-shadow: 0 0 1rem var(--color-moon-body);
-    animation: weather-moon 2s 0.5s forwards;
+    animation: {
+      name: weather-moon;
+      duration: 2s;
+      delay: 0.5s;
+      fill-mode: forwards;
+    }
   }
 
   .crater {
@@ -62,7 +67,12 @@
     border-radius: 50%;
     transform: rotate(30deg) scale(1, 1);
     transform-origin: 50% 100%;
-    animation: weather-drop linear infinite 1s;
+    animation: {
+      name: weather-drop;
+      iteration-count: infinite;
+      direction: linear;
+      duration: 1s;
+    }
     z-index: 1;
 
     &::before {

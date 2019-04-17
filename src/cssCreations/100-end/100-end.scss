@@ -1,8 +1,7 @@
-
 .end {
   @include frame();
 
-  --color-background: #272C34;
+  --color-background: #272c34;
   --color-dark: #000000;
   --color-light: #ffffff;
   --width: 80%;
@@ -14,9 +13,9 @@
   $line-thickness-ratio: 0.73;
   --animation-delay-unit: calc(1s / 6);
   $box-shadow-semicircle-light: 0 0 1rem rgba(255, 255, 255, 0.5);
-  $box-shadow-semicircle-dark: 0 0 1rem #272C34;
+  $box-shadow-semicircle-dark: 0 0 1rem #272c34;
   $box-shadow-semicircle-inset-light: inset 0 0 1rem rgba(255, 255, 255, 0.5);
-  $box-shadow-semicircle-inset-dark: inset 0 0 1rem #272C34;
+  $box-shadow-semicircle-inset-dark: inset 0 0 1rem #272c34;
 
   @mixin end-line($length, $direction: 'vertical') {
     @if $direction == 'vertical' {
@@ -50,7 +49,13 @@
     border-radius: 1rem;
     background-color: var(--color-light);
     box-shadow: 0 0 1rem var(--color-light);
-    animation: end-letters var(--animation-duration) infinite alternate both;
+    animation: {
+      name: end-letters;
+      duration: var(--animation-duration);
+      iteration-count: infinite;
+      direction: alternate;
+      fill-mode: both;
+    }
     position: absolute;
     width: 10%;
   }
@@ -170,8 +175,14 @@
       align-items: center;
       justify-content: center;
       box-shadow: $box-shadow-semicircle-light;
-      animation: end-semicircle var(--animation-duration) infinite alternate both;
-      animation-delay: calc(var(--animation-delay-unit) * 18);
+      animation: {
+        name: end-semicircle;
+        duration: var(--animation-duration);
+        iteration-count: infinite;
+        direction: alternate;
+        fill-mode: both;
+        delay: calc(var(--animation-delay-unit) * 18);
+      }
 
       &::before {
         content: '';
@@ -180,8 +191,8 @@
         background-color: var(--color-background) !important;
         border-radius: 50%;
         box-shadow: inset 0 0 0.4rem rgba(255, 255, 255, 0.5);
-        animation: end-box-shadow var(--animation-duration) infinite alternate both;
-        animation-delay: calc(var(--animation-delay-unit) * 18);
+        animation: inherit;
+        animation-name: end-box-shadow;
       }
     }
   }
