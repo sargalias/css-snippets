@@ -108,8 +108,13 @@
       width: 100%;
       height: 100%;
       background-color: var(--cube-fill-color-darker);
-      animation: cube-loader-fill-bottom var(--animation-time) infinite
-        alternate both;
+      animation: {
+        name: cube-loader-fill-bottom;
+        duration: var(--animation-time);
+        iteration-count: infinite;
+        direction: alternate;
+        fill-mode: both;
+      }
       bottom: 0;
     }
   }
