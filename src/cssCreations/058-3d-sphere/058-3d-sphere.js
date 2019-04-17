@@ -11,7 +11,7 @@ const createCircleDivs = (num = 3, letter) =>
   ));
 
 const ThreeDSphere = () => (
-  <CssCreationWrapper heading="3D sphere">
+  <CssCreationWrapper heading="058 - 3D sphere">
     <div className="three-d-sphere">
       <div className="center">
         <div className="circle">
