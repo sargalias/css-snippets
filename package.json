@@ -10,20 +10,20 @@
     "format": "prettier ./src/**/*.{js,css,scss,html,json}"
   },
   "dependencies": {
-    "@loadable/component": "^5.5.0",
-    "gatsby": "^2.7.1",
-    "gatsby-plugin-react-helmet": "^3.0.4",
-    "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sass-resources": "^2.0.0",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.16.4",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0",
-    "react-intersection-visible": "^2.1.0",
-    "react-lazyload": "^2.3.0"
+    "@loadable/component": "5.5.0",
+    "gatsby": "2.7.1",
+    "gatsby-plugin-react-helmet": "3.0.4",
+    "gatsby-plugin-sass": "2.0.11",
+    "gatsby-plugin-sass-resources": "2.0.0",
+    "node-sass": "4.12.0",
+    "prettier": "1.16.4",
+    "react": "16.5.1",
+    "react-dom": "16.5.1",
+    "react-helmet": "5.2.0",
+    "react-intersection-visible": "2.1.0",
+    "react-lazyload": "2.3.0"
   },
   "devDependencies": {
-    "gatsby-plugin-root-import": "^2.0.4"
+    "gatsby-plugin-root-import": "2.0.4"
   }
 }
