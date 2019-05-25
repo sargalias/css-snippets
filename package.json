@@ -1,6 +1,11 @@
 {
   "name": "100-days-css",
   "description": "100 Days CSS challenge",
+  "author": {
+    "name": "Spyros Argalias",
+    "email": "sargalias@gmail.com",
+    "url": "https://sargalias.com"
+  },
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop --open",
